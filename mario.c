@@ -1,7 +1,7 @@
 #include <cs50.h>
 #include <stdio.h>
 
-int main (void)
+int main(void)
 {
     int n;
     do 
@@ -17,7 +17,7 @@ int main (void)
         
         for (int j = 0; j < s; j++)
         {
-            printf (" ");
+            printf(" ");
         }
         for (int k = 0; k < h; k++)
         {
