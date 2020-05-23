@@ -20,10 +20,10 @@ int main (void)
         if (s[i] == '.' || s[i] == '!' || s[i] == '?')
         num_sentences++;
     }
-    float L = (num_letters / (float) num_words) * 100;
-    float S = (num_sentences / (float) num_words) * 100;
+    float L = ((float) num_letters / (float) num_words) * 100;
+    float S = ((float) num_sentences / (float) num_words) * 100;
     int index = round(0.0588 * L - 0.296 * S - 15.8);
-    if (index <= 1)
+    if (index < 1)
     printf("Before Grade 1\n ");
     else if (index >= 16)
     printf ("Grade 16+\n");
