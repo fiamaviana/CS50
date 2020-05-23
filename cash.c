@@ -9,7 +9,7 @@ int main(void)
     float dollars;
     do
     {
-        dollars = get_float ("Chash owed: ");
+        dollars = get_float("Chash owed: ");
     }
     while(dollars < 0);
     
