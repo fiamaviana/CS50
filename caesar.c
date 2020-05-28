@@ -4,7 +4,7 @@
 #include <string.h>
 #include <ctype.h>
 
-int main(int argc, string argv[])
+int main(int argc, string argv)
 {
     if(argc != 2)
     {
