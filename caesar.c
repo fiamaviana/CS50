@@ -4,7 +4,7 @@
 #include <string.h>
 #include <ctype.h>
 
-int main(int argc, char** argv)
+int main(int argc, string argv[])
 {
     if(argc != 2)
     {
@@ -17,18 +17,19 @@ int main(int argc, char** argv)
         printf("key must be positive\n");
         return 1;
     }
+    else
+    {
+        string p = get_string("plaintext: ");
     
-    string p = get_string("plaintext: ");
+        printf("ciphertext: ");
     
-    printf("ciphertext: ");
-    
-    for(int i = 0, len = strlen(p); i < len; i++)
+    for(int i = 0, n = strlen(p); i < n; i++)
     {
         if(islower(p[i]))
-            printf("%c", (p[i] - 'a' + k) % 26 + 'a');
+            printf("%c", (((p[i] + k) - 97) % 26) + 97);
             
         else if (isupper(p[i]))
-            printf("%c", (p[i] - 'A' + k) % 26 + 'A');
+            printf("%c", (((p[i] + k) - 65) % 26) + 65);
             
         else
             printf("%c", p[i]);
@@ -36,4 +37,5 @@ int main(int argc, char** argv)
 
     printf("\n");
     return 0;
+    }
 }
