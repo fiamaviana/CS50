@@ -26,10 +26,6 @@ int main(int argc, string argv[])
     
     for(int i = 0, n = strlen(p); i < n; i++)
     {
-        if(isdigit(p[i]))
-            printf("Usage: ./caesar key\n");
-            return 1;
-        
         if(islower(p[i]))
             printf("%c", (((p[i] + k) - 97) % 26) + 97);
             
