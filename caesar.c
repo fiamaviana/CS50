@@ -12,7 +12,7 @@ int main(int argc, string argv[])
         return 1;
     }
     int k = atoi(argv[1]);
-    if (k < 0)
+    if(isdigit(k) < 0)
     {
         printf("key must be positive\n");
         return 1;
@@ -36,6 +36,6 @@ int main(int argc, string argv[])
     }
 
     printf("\n");
+    return 0;
     }
-return 0;
 }
