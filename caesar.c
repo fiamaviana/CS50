@@ -11,11 +11,7 @@ int main(int argc, string argv[])
         printf("Usage: ./caesar key\n");
         return 1;
     }
-    if (isdigit(argc) < 0)
-    {
-        printf("Usage: ./caesar key\n");
-        return 1;
-    }
+    
     int k = atoi(argv[1]);
     if(k < 0)
     {
@@ -30,6 +26,10 @@ int main(int argc, string argv[])
     
     for(int i = 0, n = strlen(p); i < n; i++)
     {
+        if(isdigit(p[i]))
+            printf("Usage: ./caesar key\n");
+            return 1;
+        
         if(islower(p[i]))
             printf("%c", (((p[i] + k) - 97) % 26) + 97);
             
