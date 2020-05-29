@@ -6,35 +6,32 @@
 
 int main(int argc, string argv[])
 {
-    if(argc != 2 && isdigit(*argv[1]))
+    if(argc == 2 && isdigit(*argv[1]))
     {
-        printf("Usage: ./caesar key\n");
-        return 1;
-    }
+        int k = atoi(argv[1]);
+        
+        string p = get_string("plaintext: ");
+        printf("ciphertext: ");
     
-    int k = atoi(argv[1]);
-    if(k < 0)
-    {
-        printf("key must be positive\n");
-        return 1;
-    }
-    
-    string p = get_string("plaintext: ");
-    
-    printf("ciphertext: ");
-    
-    for(int i = 0, n = strlen(p); i < n; i++)
-    {
-        if(islower(p[i]))
-            printf("%c", (((p[i] + k) - 97) % 26) + 97);
+        for(int i = 0, n = strlen(p); i < n; i++)
+        {
+        if (p[i] >= 'a' && p[i] <= 'z')
+            printf("%c", (((p[i] - 'a') + k) % 26) + 'a');
             
-        else if (isupper(p[i]))
-            printf("%c", (((p[i] + k) - 65) % 26) + 65);
+        else if (p[i] >= 'A' && p[i] <= 'Z')
+            printf("%c", (((p[i] - 'A') + k) % 26) + 'A');
         
         else
             printf("%c", p[i]);
     }
 
-    printf("\n");
+        printf("\n");
+        return 0;
     
+    }
+    else
+    {
+        printf("Usage: ./caesar k\n");
+        return 1;
+    }
 }
