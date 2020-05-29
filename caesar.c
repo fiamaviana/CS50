@@ -6,13 +6,13 @@
 
 int main(int argc, string argv[])
 {
-    if(argc != 2)
+    if(isdigit(argc != 2))
     {
         printf("Usage: ./caesar key\n");
         return 1;
     }
     int k = atoi(argv[1]);
-    if(isdigit(k) < 0)
+    if(k < 0)
     {
         printf("key must be positive\n");
         return 1;
@@ -30,7 +30,7 @@ int main(int argc, string argv[])
             
         else if (isupper(p[i]))
             printf("%c", (((p[i] + k) - 65) % 26) + 65);
-            
+        
         else
             printf("%c", p[i]);
     }
