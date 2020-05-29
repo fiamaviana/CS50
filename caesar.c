@@ -18,11 +18,10 @@ int main(int argc, string argv[])
         printf("key must be positive\n");
         return 1;
     }
-    else
-    {
-        string p = get_string("plaintext: ");
     
-        printf("ciphertext: ");
+    string p = get_string("plaintext: ");
+    
+    printf("ciphertext: ");
     
     for(int i = 0, n = strlen(p); i < n; i++)
     {
@@ -37,6 +36,5 @@ int main(int argc, string argv[])
     }
 
     printf("\n");
-    return 0;
-    }
+    
 }
