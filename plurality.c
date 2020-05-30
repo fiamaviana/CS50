@@ -96,6 +96,7 @@ int get_max(void)
 void print_winner(void)
 {
    int max_votes = get_max();
+   
    for (int i = 0; i < candidate_count; i++)
    {
        if (candidates[i].votes == max_votes)
