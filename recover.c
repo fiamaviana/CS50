@@ -5,7 +5,7 @@
 
 int main(int argc, char *argv[])
 {
-    if(argc != 2)
+    if (argc != 2)
     {
         printf("Usage: ./recover image\n");
         return 1;
@@ -26,21 +26,28 @@ int main(int argc, char *argv[])
     bool first_jpeg = false;
     FILE *img;
     unsigned char buffer[512];
-    while(fread(buffer, 512, 1, file))
+    while (fread(buffer, 512, 1, file))
     {
-        if(buffer[0] == 0xff && buffer[1] == 0xd8 && buffer[2] == 0xff && (buffer[3] & 0xf0) == 0xe0)
+        if (buffer[0] == 0xff && buffer[1] == 0xd8 && buffer[2] == 0xff && (buffer[3] & 0xf0) == 0xe0)
         {
             //open a new JPEG file
-            if(!first_jpeg)
+            if (!first_jpeg)
+            {
                 first_jpeg = true;
+            }
+                
             else
+            {
                 fclose(img);
+            }
             
             char filename[8];
             sprintf(filename, "%03i.jpg", file_index++);
             img = fopen(filename, "w");
-            if(img == NULL)
+            if (img == NULL)
+            {
                 return 1;
+            }
             fwrite(buffer, 512, 1, img);
 
         }
