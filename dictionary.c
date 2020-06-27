@@ -26,9 +26,9 @@ unsigned int word_counter;
 unsigned int hash_func(const char* word)
 {
     unsigned int hash = 0;
-    for (int i = 0; word[i]!= '\0'; i++)
+    for (int i = 0, n = strlen(word); i < n; i++)
     {
-        hash = 31 * hash + word[i];
+        hash = (hash << 2) ^ word[i];
     }
     return hash % N;
 }
