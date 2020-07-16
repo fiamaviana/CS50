@@ -44,4 +44,4 @@ with open(argv[1], newline = '') as peoplefile:
         if match == len(sequences):
             print(person['name'])
             exit()
-    print("Not match")
+    print("No match")
