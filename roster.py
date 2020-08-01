@@ -1,10 +1,9 @@
 import cs50
 import sys
-import csv
 
 # check command line argument
 if len(sys.argv) != 2:
-    print("Usage: python import.py characters.csv")
+    print("Usage: python roster.py Gryffindor")
     exit(1)
 
 #query database for all students in the house
