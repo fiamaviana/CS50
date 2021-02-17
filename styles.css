@@ -1,0 +1,39 @@
+body{
+    background: lightgreen;
+    font-family: "Times New Roman", Times, serif;
+}
+.title
+{
+    text-align: center;
+    color:green;
+}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+h1, h2{
+    text-align: center;
+    color:green;
+}
+
+#back
+{
+    float: left;
+}
+
+#next
+{
+   float: right;
+}
+
+a:visited {
+  color: blue;
+}
+
+p ~ li {
+  font-weight: bolder
+}
